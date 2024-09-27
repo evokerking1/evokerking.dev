@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 
+<!--Add some site monitoring-->
 <script
   src="https://js.sentry-cdn.com/7feec85aed58cc0ee62114b83b0d7da0.min.js"
   crossorigin="anonymous"
 ></script>
+<!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: 'ecb8b0a2d5bef1bba89b743c4315e75e' });
+</script>
 
 
 
