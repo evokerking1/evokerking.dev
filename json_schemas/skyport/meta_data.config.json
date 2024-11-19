@@ -7,7 +7,7 @@
         "type": "object",
         "properties": {
           "version": {
-            "type": "number",
+            "type": "string",
             "minLength": 1
           },
           "codename": {
