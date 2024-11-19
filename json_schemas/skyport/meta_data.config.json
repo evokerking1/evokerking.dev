@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Metadata configuration json schema",
+    "description": "Skyport Metadata configuration json schema",
     "type": "object",
     "properties": {
       "meta": {
