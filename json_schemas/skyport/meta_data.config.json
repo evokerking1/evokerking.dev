@@ -8,21 +8,23 @@
         "properties": {
           "version": {
             "type": "string",
-            "minLength": 1
+            "minLength": 3,
+            "description": "Version Number the current skyport release"
           },
           "codename": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Codename for the current skyport release"
           },
           "mode": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "What mode the server runs in. Not currently used."
           }
         },
         "required": [
           "version",
-          "codename",
-          "mode"
+          "codename"
         ]
       }
     },
