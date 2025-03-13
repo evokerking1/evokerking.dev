@@ -89,15 +89,6 @@
           "defaultValue": 0,
           "min": 0,
           "max": 19999
-        },
-        {
-          "title": "Team Name",
-          "description": "The name of the team of the robot you're scouting.",
-          "type": "text",
-          "required": true,
-          "code": "teamName",
-          "formResetBehavior": "reset",
-          "defaultValue": ""
         }
       ]
     },
