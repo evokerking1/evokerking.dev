@@ -89,6 +89,19 @@
           "code": "matchNumber",
           "formResetBehavior": "increment",
           "defaultValue": 1
+        },
+        {
+          "title": "Alliance",
+          "description": "Enter the team color.",
+          "type": "select",
+          "required": true,
+          "code": "matchAlliance",
+          "formResetBehavior": "increment",
+          "defaultValue": "1",
+          "choices": {
+            "1": "Red",
+            "2": "Blue"
+          }
         }
       ]
     },
