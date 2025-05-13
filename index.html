@@ -13,88 +13,62 @@
     </head>
 
     <body>
+            
+        <div id="header">
+            <div id="cube-container">
+                <div id="cube" title="Boyne Cube">
+                    <div class="face" id="top"></div>
+                    <div class="face" id="bottom"></div>
+                    <div class="face" id="left"></div>
+                    <div class="face" id="right"></div>
+                    <div class="face" id="front"></div>
+                    <div class="face" id="back"></div>
+                    
+                </div>
+            </div>
 
-        <div id="sidebar-left">
-
-            <div class="sidebar-close" onclick="document.body.className = ''">Close</div>
-
-            <h1>Menu</h1>
-
-            <h2>Socials</h2>
-            <ul id="socials">
-                <li><a href="https://github.com/DedFishy">GitHub</a></li>
-                <li><a href="https://open.spotify.com/user/j22nobeoowyht006ugwanuf13">Spotify</a></li>
-                <li><a href="https://solo.to/boyne">solo.to</a></li>
-                <li><a href="https://www.youtube.com/@bigboyne">YouTube</a></li>
-                <li><a href="https://www.twitch.tv/d3df1shy">Twitch</a></li>
-                <li><a href="https://scratch.mit.edu/users/B-Game-Studios/">Scratch</a></li>
-                <li><a href="https://codepen.io/SuperBoyne">CodePen</a></li>
-                <li><a href="https://replit.com/@Boyney">replit</a></li>
-            </ul>
-
-            <h2>Certifications</h2>
-            <ul id="certifications">
-                <li><a href="/certifications/htmlcss.pdf">HTML and CSS</a></li>
-                <li><a href="/certifications/java.pdf">Java</a></li>
-                <li><a href="/certifications/python.pdf">Python</a></li>
-                <li><a href="/certifications/python-essentials.pdf">Python Essentials</a></li>
-                <li><a href="/certifications/networkingbasics.pdf">Networking Basics</a></li>
-                <li><a href="/certifications/ndg.pdf">NDG Linux Unhatched</a></li>
-                <li><a href="/certifications/introtocybersecurity.pdf">Introduction to Cybersecurity</a></li>
-            </ul>
-
-            <h2>Contact</h2>
-            <ul id="contact">
-                <li>Email: boynegregg@gmail.com</li>
-                <li>Discord: dedfishy</li>
-            </ul>
-
-            <h2>PC Specs</h2>
-            <ul id="specs">
-                <l1>Framework 16</l1>
-                <li>OS: Linux Mint</li>
-                <li>CPU: AMD Ryzen 7 7840HS</li>
-                <li>GPU: AMD Radeon RX 7700S</li>
-                <li>RAM: 64GB DDR5</li>
-                <li>Storage: 4TB</li>
-            </ul>
-
+            <div id="title">
+                <h2>Welcome to world-famous</h2>
+                <h1>boyne.dev</h1>
+                <h2>Boyne is <span id="online-status">loading</span> <span id="lanyard-activity-name"></span></h2>
+            </div>
         </div>
 
-        <div id="main">
-            <div id="sidebar-header">
-                <div id="sidebar-left-show" onclick="document.body.className = 'sidebar-left'"></div>
+        <div id="about-me">
+            Hey, I'm Boyne, a highschooler, software developer, and Christian from the United States.
+        </div>
+
+        <div id="socials-row">
+            <a href="https://github.com/DedFishy">GitHub</a></li>
+            <a href="https://open.spotify.com/user/j22nobeoowyht006ugwanuf13">Spotify</a></li>
+            <a href="https://solo.to/boyne">solo.to</a></li>
+            <a href="https://www.youtube.com/@bigboyne">YouTube</a></li>
+            <a href="https://www.twitch.tv/d3df1shy">Twitch</a></li>
+            <a href="https://scratch.mit.edu/users/B-Game-Studios/">Scratch</a></li>
+            <a href="https://codepen.io/SuperBoyne">CodePen</a></li>
+            <a href="https://replit.com/@Boyney">replit</a></li>
+        </div>
+
+        <div class="image-section">
+            
+            <img src="/assets/robotics/robot.png" alt="Robot">
+            <div class="image-section-content">
+                <h2>My Robotics Team</h2>
+                <h1>Binary Crows</h1>
+                <h2 id="team-number">FRC 10589</h2>
+                <p>I am a programmer for the Binary Crows FRC robotics team.</p>
+                <a href="https://github.com/BinaryCrows10589">GitHub</a>
             </div>
+        </div>
 
-            <div id="header">
-                <div id="cube-container">
-                    <div id="cube" title="Boyne Cube">
-                        <div class="face" id="top"></div>
-                        <div class="face" id="bottom"></div>
-                        <div class="face" id="left"></div>
-                        <div class="face" id="right"></div>
-                        <div class="face" id="front"></div>
-                        <div class="face" id="back"></div>
-                        
-                    </div>
-                </div>
+        <div class="section">
 
-                <div id="title">
-                    <h1>boyne.dev</h1>
-                    <h2>Boyne is <span id="online-status">loading</span> <span id="lanyard-activity-name"></span></h2>
-                </div>
-            </div>
-
-            <div id="about-me">
-                Hey, I'm Boyne, a highschooler, software developer, and Christian from the United States.
-            </div>
-
-            <h1>Projects</h1>
-
-            <div id="projects" class="cards">
+            <div class="cards section-list">
 
                 <!-- Progressbar95 Real Edition -->
-                <div class="card" style="background-image: url(/assets/projects/thumbnails/progressbar95.png);">
+                <div class="card">
+
+                    <img class="card-img" src="/assets/projects/thumbnails/progressbar95.png">
 
 
                     <div class="card-content">
@@ -107,7 +81,9 @@
                 </div>
 
                 <!-- Spryg -->
-                <div class="card" style="background-image: url(/assets/projects/thumbnails/spryg.png);">
+                <div class="card">
+
+                    <img class="card-img" src="/assets/projects/thumbnails/spryg.png">
 
                     <div class="card-content">
                         <h2>Spryg</h2>
@@ -119,7 +95,9 @@
                 </div>
 
                 <!-- Monster -->
-                <div class="card" style="background-image: url(/assets/projects/thumbnails/monster.webp);">
+                <div class="card">
+
+                    <img class="card-img" src="/assets/projects/thumbnails/monster.webp">
 
                     <div class="card-content">
                         <h2>Monster</h2>
@@ -131,9 +109,12 @@
                 </div>
 
             </div>
+            
+        </div>
 
-            <div id="bargain-bin">
-                <h1>Bargain Bin</h1>
+        <div class="section" id="bargain-bin">
+
+            <div class="section-list">
                 <a class="bargain" href="/bargain-bin/q">
                     <h2>q</h2>
                     <p>A game for weeding out the color blind</p>
@@ -147,9 +128,81 @@
                     <p>Boyne's wonderful Minecraft server</p>
                 </a>
             </div>
-
-
         </div>
+
+        <div class="image-section" id="specs">
+            
+
+            <div class="image-section-content">
+                <h2>My Computer</h2>
+                <h1>Framework 16</h1>
+                <p>OS: Windows 11 Pro
+                <p>CPU: AMD Ryzen 7 7840HS
+                <p>GPU: AMD Radeon RX 7700S
+                <p>RAM: 64GB DDR5
+                <p>Storage: 4TB
+            </div>
+            <img src="/assets/specs/framework.png" alt="Framework 16">
+        </div>
+
+        <h2>Languages</h2>
+        <div class="image-chips" id="known-languages">
+            <img src="/assets/icons/python.svg">
+            <img src="/assets/icons/javascript.svg">
+            <img src="/assets/icons/java.svg">
+            <img src="/assets/icons/c-sharp.svg">
+            <img src="/assets/icons/mysql-icon.svg">
+            <img src="/assets/icons/godot-icon.svg">
+        </div>
+        <h2>Non-languages</h2>
+        <div class="image-chips" id="known-nonlangs">
+            <img src="/assets/icons/html-5.svg">
+            <img src="/assets/icons/css-3.svg">
+            <img class="inverted-chip" src="/assets/icons/flask.svg">
+        </div>
+        <h2>Want To Learn</h2>
+        <div class="image-chips" id="want-to-learn">
+            <img class="inverted-chip" src="/assets/icons/rust.svg">
+            <img src="/assets/icons/c-plusplus.svg">
+            <img src="/assets/icons/typescript-icon.svg">
+        </div>
+        <h2>Stuff I Like</h2>
+        <div class="image-chips" id="liked-stuff">
+            <img src="/assets/icons/android-icon.svg">
+            <img src="/assets/icons/blender.svg">
+            <img class="inverted-chip" src="/assets/icons/github-icon.svg">
+            <img src="/assets/icons/intellij-idea.svg">
+            <img src="/assets/icons/raspberry-pi.svg">
+            <img src="/assets/icons/stackoverflow-icon.svg">
+            <img src="/assets/icons/tor-browser.svg">
+            <img src="/assets/icons/visual-studio-code.svg">
+            <img src="/assets/icons/Zen-3D-Dark.svg">
+        </div>
+
+        <p id="chip-works-cited">All these images are from <a href="https://svglogos.dev/">SVGLOGOS</a> except for Zen Browser, which is from their <a href="https://github.com/zen-browser/branding/tree/main">branding repository</a>.</p>
+
+
+        <div id="footer">
+            <div id="footer-contact">
+                <h2>Contact</h2>
+                <p>Email: boynegregg@gmail.com
+                <p>Discord: dedfishy
+            </div>
+
+            <div id="footer-certifications">
+                <h2>Certifications</h2>
+                <a href="/certifications/htmlcss.pdf">HTML and CSS</a>
+                <a href="/certifications/java.pdf">Java</a>
+                <a href="/certifications/python.pdf">Python</a>
+                <a href="/certifications/python-essentials.pdf">Python Essentials</a>
+                <a href="/certifications/networkingbasics.pdf">Networking Basics</a>
+                <a href="/certifications/ndg.pdf">NDG Linux Unhatched</a>
+                <a href="/certifications/introtocybersecurity.pdf">Introduction to Cybersecurity</a>
+            </div>
+        </div>
+
+        <div id="copyright">© 2025 Boyne Gregg</div>
+        <div id="disclaimer">All presented logos and images not from Boyne are the property of their respective owners. They do not imply that I am endorsed by them, and I am not affiliated with them.</div>
 
         <script src="/lanyard.js"></script>
 

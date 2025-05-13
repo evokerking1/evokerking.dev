@@ -1,13 +1,11 @@
 * {
     --fg: white;
     --fg-deep: rgb(147, 147, 147);
-    --bg: rgb(32, 32, 32);
-    --bg-deep: rgb(11, 11, 11);
+    --bg: rgb(0, 0, 0);
+    --bg-deep: rgb(32, 32, 32);
     --shadow: black;
     --highlight: rgb(255, 255, 0);
     --close-bg: rgb(70, 0, 0);
-
-    --border-radius: 5px;
 
     --transition: 0.2s;
 
