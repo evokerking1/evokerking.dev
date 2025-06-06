@@ -275,3 +275,10 @@ a {
     text-align: center;
     background-color: var(--bg-deep);
 }
+
+.bigger-is-better {
+    font-size: 8em;
+    color: yellow;
+    text-shadow: 15px 15px 0 black;
+    transform: rotateX(5deg) rotateY(5deg) rotateZ(5deg);
+}
