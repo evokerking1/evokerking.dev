@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Framework Matrix Manager</title>
+        <style>
+            @font-face {
+                font-family: fwmm;
+                src: url("/assets/projects/fwmm/font.ttf");
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                font-family: fwmm, sans-serif;
+                background-color: black;
+                color: white;
+                --accent: #0011ff;
+            }
+            #header {
+                background-color: black;
+                color: white;
+                height: 75vh;
+                font-size: 2em;
+                display: flex;
+                flex-direction: row;
+                flex-shrink: 1;
+                word-wrap: break-word;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #header img {
+                height: 100%;
+                border: 10px solid black;
+                padding: 10px;
+                background-color: var(--accent);
+                box-sizing: border-box;
+                border-radius: 20px;
+            }
+            #header-description {
+                padding: 25px;
+                height: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: right;
+
+            }
+            #header-description h3 {
+                text-align: left;
+            }
+            #header h1 {
+                margin-top: 0;
+            }
+
+            h2, h3 {
+                text-align: center;
+            }
+            h2 {
+                font-size: 3em;
+                margin: 0;
+            }
+            h3 {
+                font-size: 1.1em;
+                margin: 0;
+            }
+
+            .button-row {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+            .button-row a {
+                background-color: white;
+                color: black;
+                font-weight: bold;
+                padding: 10px;
+                font-size: 1.2em;
+                border-radius: 15px;
+                border: 5px solid var(--accent);
+                text-decoration: none;
+                transition: 0.2s;
+            }
+            .button-row a:hover {
+                border: 5px solid white;
+                transform: scale(1.1);
+            }
+
+            .box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 1.5em;
+                margin-left: 20vw;
+                margin-right: 20vw;
+            }
+
+            a {
+                color: #5757ff;
+            }
+
+            hr {
+                width: 70vw;
+                margin-top: 25px;
+            }
+
+            br {
+                margin: 10px;
+            }
+
+            @media screen and (max-width: 900px) {
+            #header {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            #header h1, #header h3 {
+                text-align: center;
+            }
+            
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/assets/projects/fwmm/screen_and_matrix.jpg">
+            <div id="header-description">
+                <h1>Framework Matrix Manager</h1>
+                <h3>Control your Framework 16's LED matrix input module.</h3>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="button-row">
+            <a href="https://github.com/DedFishy/FWMM">GitHub</a>
+        </div>
+
+        <br>
+        <h2>Downloads</h2>
+        <div class="button-row">
+            <a href="https://github.com/DedFishy/FWMM/releases">Latest Release</a>
+            <a href="https://github.com/DedFishy/FWMM/archive/refs/heads/main.zip">Source Code</a>
+        </div>
+        <h3>(Only the source allows you to install widgets with new dependencies)</h3>
+
+        <br>
+
+        <h2>How to Run</h2>
+        <div class="box">
+            <h3>From Source</h3>
+            <ol>
+                <li>Acquire a recent installation of Python</li>
+                <li>Install FWMM's dependencies with <code>pip</code>:
+                    <ul>
+                        <li><code>filedialpy</code></li>
+                        <li><code>pyserial</code></li>
+                        <li><code>aiohttp</code></li>
+                        <li><code>numpy</code></li>
+                        <li>Linux: <code>python_crontab</code></li>
+                        <li>Windows: <code>winshell</code></li>
+                    </ul>
+                </li>
+                <li>Download the source code and extract it.</li>
+                <li>Execute <code>main.py</code> from within the extracted folder</li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <h3>From Binary</h3>
+            <ol>
+                <li>Download the latest Linux build from GitHub releases</li>
+                <li>Execute <code>FWMM</code> with <code>./FWMM</code> (you may have to run <code>sudo chmod +x ./FWMM</code> if you are denied excute permissions)</li>
+            </ol>
+        </div>
+        <br>
+        <h2>Usage</h2>
+        <div class="box">
+            <p>When launching the program, your web browser should open to the dashboard. If it doesn't, visit <a href="http://127.0.0.1:5621">http://127.0.0.1:5621</a>.
+            Here's an overview of what each section of the application does.</p>
+            <h3>Layout</h3>
+            <p>All of your customizations will live inside a "layout" file, which has a <code>.mmw</code> file extension but is really just a JSON file.
+            You may load or save your layouts as this, and setting a default layout will cause that layout to be loaded whenever you start FWMM again.</p>
+            <h3>Control</h3>
+                <ul>
+                    <li>Stop: This is where you can stop FWMM, which will turn off your LED matrix.</li>
+                    <li>Add/Remove from Startup: Clicking these will register FWMM to either your Linux crontab or your Windows startup folder. This feature will allow FWMM to start whenever you log into your computer. You must set a default layout to use this feature, or your matrix will display nothing!</li>
+                    <li>Render Now: This button skips the rendering update loop and renders whatever is on your matrix. This is for if FWMM gets put in a weird state where it does not automatically render things.</li>
+                </ul>
+            <h3>Widgets</h3>
+            <p>
+                To add a widget to the active layout, drag it over from the rightmost pane into the middle pane. It will appear there, and you can configure it as you wish.
+                Every widget in your layout will appear in the leftmost pane as a colored rectangle. You can customize the color of this rectangle with the widget's color selector, and it will persist.
+            </p>
+            <h3>Creating New Widgets</h3>
+            <ol>
+                <li>Create a new Python file in the widgets folder</li>
+                <li>Create a class named Widget that is a subclass of the Widget class in widget.py</li>
+                <li>Fill out required fields and create the functions that will render the widget and inform of size changes</li>
+                <li>Run main.py and add your new widget to a layout!</li>
+            </ol>
+            <p>
+                There is a template for this under template.py in the root of the GitHub repository.
+            </p>
+        </div>
+
+        <br>
+
+        <h2>Other</h2>
+        <div class="box">
+            <p>
+                If you find a bug, please open a GitHub issue and/or contribute a pull request to fix it.
+                Thanks for checking out this project!
+            </p>
+        </div>
+            
+    </body>
+</html>
