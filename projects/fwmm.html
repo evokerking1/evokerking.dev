@@ -111,6 +111,20 @@
                 margin: 10px;
             }
 
+            #gallery {
+                display: flex;
+                flex-direction: row;
+                width: 100vw;
+                align-items: center;
+                justify-content: space-around;
+                
+            }
+            #gallery img {
+                min-width: 0;
+                flex-shrink: 1;
+                height: 35vh;
+            }
+
             @media screen and (max-width: 900px) {
             #header {
                 flex-direction: column;
@@ -120,6 +134,10 @@
             }
             #header h1, #header h3 {
                 text-align: center;
+            }
+
+            #gallery {
+                flex-direction: column;
             }
             
             }
@@ -148,6 +166,13 @@
             <a href="https://github.com/DedFishy/FWMM/archive/refs/heads/main.zip">Source Code</a>
         </div>
         <h3>(Only the source allows you to install widgets with new dependencies)</h3>
+
+        <br>
+
+        <div id="gallery">
+            <img src="/assets/projects/fwmm/matrix.jpg">
+            <img src="/assets/projects/fwmm/screenshot.png">
+        </div>
 
         <br>
 
