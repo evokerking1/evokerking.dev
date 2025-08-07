@@ -1,0 +1,145 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome10",
+    "definitions": {
+        "Welcome10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DOCTYPE": {
+                    "type": "string"
+                },
+                "DOCVER": {
+                    "type": "string"
+                },
+                "content": {
+                    "$ref": "#/definitions/Content"
+                }
+            },
+            "required": [
+                "DOCTYPE",
+                "DOCVER",
+                "content"
+            ],
+            "title": "Welcome10"
+        },
+        "Content": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "meta": {
+                    "$ref": "#/definitions/Meta"
+                },
+                "dependencies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "recommends": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "suggests": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "conflicts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "configfiles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "scripts": {
+                    "$ref": "#/definitions/Scripts"
+                }
+            },
+            "required": [
+                "configfiles",
+                "conflicts",
+                "dependencies",
+                "meta",
+                "recommends",
+                "scripts",
+                "suggests"
+            ],
+            "title": "Content"
+        },
+        "Meta": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "package": {
+                    "type": "string"
+                },
+                "ver": {
+                    "type": "string"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "arch": {
+                    "type": "string"
+                },
+                "maintainer": {
+                    "type": "string"
+                },
+                "credits": {
+                    "type": "string"
+                },
+                "desc-short": {
+                    "type": "string"
+                },
+                "desc-long": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "arch",
+                "credits",
+                "desc-long",
+                "desc-short",
+                "maintainer",
+                "package",
+                "section",
+                "ver"
+            ],
+            "title": "Meta"
+        },
+        "Scripts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "preinst": {
+                    "type": "string"
+                },
+                "postinst": {
+                    "type": "string"
+                },
+                "prerm": {
+                    "type": "string"
+                },
+                "postrm": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "postinst",
+                "postrm",
+                "preinst",
+                "prerm"
+            ],
+            "title": "Scripts"
+        }
+    }
+}
