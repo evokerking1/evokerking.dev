@@ -5,6 +5,9 @@ var stringProgress = 0;
 
 disclaimer.onclick = (_) => {
     disclaimer.className = "bigger-is-better";
+    if (stringProgress >= string.length-1) {
+        disclaimer.classList.add("underline");
+    }
     if (stringProgress >= string.length) {
         document.location.replace("https://better.boyne.dev")
     }
