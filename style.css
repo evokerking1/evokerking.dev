@@ -161,5 +161,6 @@ h2 {
     transition: 0.2s;
 }
 .certification:hover {
-    box-shadow: -4px 4px 0 black;
+    background-color: white;
+    color: black;
 }
