@@ -17,6 +17,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  --border-weight: 16px;
 }
 
 #top-bar {
@@ -31,10 +33,10 @@
   box-shadow: 8px 8px 0 0 black;
   border-radius: 4px;
   transition: 0.1s;
-  border-left: 8px solid red;
-  border-right: 8px solid green;
-  border-top: 8px solid yellow;
-  border-bottom: 8px solid blue;
+  border-left: var(--border-weight) solid red;
+  border-right: var(--border-weight) solid green;
+  border-top: var(--border-weight) solid yellow;
+  border-bottom: var(--border-weight) solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +47,7 @@
   width: 20%;
   height: 20%;
   background-color: black;
-  border-radius: 4px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;

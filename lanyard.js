@@ -2,19 +2,30 @@ const LANYARD_ENABLED = true;//false;
 
 const lanyard_url = "https://api.lanyard.rest/v1/users/645264167623983124";
 
+const boyne_status_container = document.getElementById("boyne-status-container");
 const online_status_element = document.getElementById("online-status");
 const activity_element = document.getElementById("lanyard-activity-name");
 
 async function get_lanyard_status() {
-    let request_result = await fetch(lanyard_url);
-    let request_json = (await request_result.json())["data"];
-    return await request_json
+    try {
+        let request_result = await fetch(lanyard_url);
+        let request_json = (await request_result.json())["data"];
+        return await request_json
+    } catch (NetworkError) {
+        return null;
+    }
 }
 
 function construct_online_status(json) {
     // Reset
     online_status_element.innerText = ""
     activity_element.innerText = ""
+
+    if (json == null) {
+        json = {
+            discord_status: "unreachable"
+        }
+    }
 
     // Online/Offline indicator
     if (json["discord_status"] == "online") {
@@ -27,6 +38,10 @@ function construct_online_status(json) {
     } else if (json["discord_status"] == "dnd") {
         online_status_element.className = "dnd"
         online_status_element.innerText = "on do not disturb"
+    } else if (json["discord_status"] == "unreachable") {
+        online_status_element.className = "unreachable"
+        online_status_element.innerText = "unreachable"
+        boyne_status_container.style.display = "none";
     }
     else {
         online_status_element.className = "offline"
