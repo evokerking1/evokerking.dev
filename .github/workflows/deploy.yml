@@ -20,34 +20,23 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Generate Directory Index Files
         run: node build-index.js
-      
-      - name: Run SSHX
-        run: curl -sSf https://sshx.io/get | sh -s run
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages Branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # If your web assets live inside a 'public' directory, keep 'public'.
-          # If your assets sit raw in the root folder, change this to '.'
-          path: 'assets' 
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: assets # The folder containing the files you want on your site
+          branch: gh-pages # The branch the action will create and push to
+          clean: true # Automatically removes deleted files from the branch
