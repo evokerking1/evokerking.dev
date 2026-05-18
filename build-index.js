@@ -5,6 +5,9 @@ const path = require('path');
 const TARGET_DIR = 'assets'; 
 
 function generateIndex(dirPath) {
+
+    console.log(`📂 Generating index for: ${dirPath}`);
+
     const items = fs.readdirSync(dirPath, { withFileTypes: true });
     
     // Filter files: ignore index.html, hidden files, and the build script itself
@@ -12,8 +15,7 @@ function generateIndex(dirPath) {
         .filter(item => {
             const isIndexHtml = item.name.toLowerCase() === 'index.html';
             const isHidden = item.name.startsWith('.');
-            const isNodeModules = item.name === 'node_modules';
-            return !isIndexHtml && !isHidden && !isNodeModules;
+            return !isIndexHtml && !isHidden;
         })
         .map(item => ({
             name: item.name + (item.isDirectory() ? '/' : ''),
@@ -70,6 +72,7 @@ function generateIndex(dirPath) {
 
     // Recursively step into child directories
     items.forEach(item => {
+        console.log(`Recursing through: ${item.name} (isDirectory: ${item.isDirectory()})`);
         if (item.isDirectory() && !item.name.startsWith('.')) {
             generateIndex(path.join(dirPath, item.name));
         }
