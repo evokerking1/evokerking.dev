@@ -20,7 +20,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-   build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -34,9 +37,16 @@ jobs:
       - name: Generate Directory Index Files
         run: node build-index.js
 
-      - name: Deploy to gh-pages Branch
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: assets # The folder containing the files you want on your site
-          branch: gh-pages # The branch the action will create and push to
-          clean: true # Automatically removes deleted files from the branch
+          # If your web assets live inside a 'public' directory, keep 'public'.
+          # If your assets sit raw in the root folder, change this to '.'
+          path: 'assets' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
