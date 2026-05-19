@@ -31,7 +31,7 @@ function generateIndex(dirPath) {
         });
 
     // Determine path relative to root for the header display
-    const relativeTitle = path.relative(TARGET_DIR, dirPath) || 'Root';
+    const relativeTitle = path.relative(TARGET_DIR, dirPath);
 
     // Self-contained HTML string
     const htmlContent = `<!DOCTYPE html>
