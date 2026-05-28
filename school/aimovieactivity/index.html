@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Movie Should I Watch?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-film"></i> Which Movie Should I Watch?</h1>
+        <p>An interactive demo to explore AI recommendation systems</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="aiControlsSection" class="card">
+                <h2><i class="fas fa-sliders"></i> Adjust AI Logic</h2>
+                <p>Control how the AI makes its decision. Tweak these settings to see how recommendations change.</p>
+                <div class="toggle-group">
+                    <div class="toggle-control">
+                        <label class="switch">
+                            <input type="checkbox" id="prioritizeGenreToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="prioritizeGenreToggle">Prioritize Genre Match</label>
+                    </div>
+                    <div class="toggle-control">
+                        <label class="switch">
+                            <input type="checkbox" id="prioritizePopularityToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="prioritizePopularityToggle">Prioritize Popularity</label>
+                    </div>
+                    <div class="toggle-control">
+                        <label class="switch">
+                            <input type="checkbox" id="prioritizeReviewScoreToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="prioritizeReviewScoreToggle">Prioritize High Review Score</label>
+                    </div>
+                    <div class="toggle-control">
+                        <label class="switch">
+                            <input type="checkbox" id="prioritizeNewerToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="prioritizeNewerToggle">Prioritize Newer Releases</label>
+                    </div>
+                    <div class="toggle-control">
+                        <label class="switch">
+                            <input type="checkbox" id="onlyGPGToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <label for="onlyGPGToggle">Only Recommend G/PG Content</label>
+                    </div>
+                </div>
+            </section>
+
+            <section id="userInputSection" class="card">
+                <h2><i class="fas fa-heart"></i> Tell Us Your Favorites</h2>
+                <p>Select 1 to 3 movies you've enjoyed (up to 3). This helps the AI understand your taste. </p>
+                <p><em>To select multiple items, hold down the Ctrl (Control) key on Windows or the Command (⌘) key on Mac and click on each item you want to select. </em></p>
+                <select id="favoriteMoviesSelect" multiple>
+                    <!-- Movie options will be populated by JavaScript -->
+                </select>
+                <button id="getRecommendationBtn"><i class="fas fa-wand-magic-sparkles"></i> Get Recommendation!</button>
+            </section>
+
+            <section id="recommendationOutputSection" class="card">
+                <h2><i class="fas fa-lightbulb"></i> AI's Pick For You</h2>
+                <div id="recommendationResult">
+                    <p class="placeholder-text">Select your favorite movies and click "Get Recommendation" to see AI's suggestion!</p>
+                </div>
+                <p class="rationale-intro" style="display: none;">Here's why this movie was recommended based on your settings:</p>
+                <div id="recommendationRationale" class="rationale-grid">
+                    <!-- Rationale will be populated here -->
+                </div>
+            </section>
+
+            <section id="educationalMessageSection" class="card">
+                <h2><i class="fas fa-brain"></i> How AI Recommendations Work</h2>
+                <p>Ever wonder how Netflix or YouTube knows what you like? They use AI recommendation systems! These systems look at things like:</p>
+                <ul>
+                    <li><strong>What you've liked before (Genre Match)</strong></li>
+                    <li><strong>What's popular overall (Popularity)</strong></li>
+                    <li><strong>What others think (User Reviews)</strong></li>
+                    <li><strong>Content rules (like age ratings)</strong></li>
+                </ul>
+                <p class="key-insight">
+                    <i class="fas fa-info-circle"></i> <strong>The Key Insight:</strong> People design these AI systems. They decide what data to use and which factors are most important. By changing these 'priorities' (like you can with the toggles above), the AI gives different recommendations. There's no single 'correct' AI; its behavior reflects the goals and choices of its creators!
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
