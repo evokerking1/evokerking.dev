@@ -7,7 +7,7 @@
 
 
 <body>
-    <div id="swf-player"></div>
+    <div id="player"></div>
 </body>
 
 <script>
@@ -17,7 +17,7 @@
         let ruffle = window.RufflePlayer.newest();
         let player = ruffle.createPlayer();
         
-        let container = document.getElementById("swf-player");
+        let container = document.getElementById("player");
         container.appendChild(player);
         player.ruffle().load("wonderputt-core.swf");
     });
