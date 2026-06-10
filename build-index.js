@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Change 'public' to your folder name (e.g., '.', 'dist', 'docs')
-const TARGET_DIR = process.argv.slice(2); 
+// Use the first CLI argument as the target directory, or default to the current folder.
+const TARGET_DIR = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve('.');
 
 function generateIndex(dirPath) {
 
@@ -30,7 +30,7 @@ function generateIndex(dirPath) {
             return a.name.localeCompare(b.name);
         });
 
-    // Determine path relative to root for the header display
+    // Determine path relative to root for the header display.
     const relativeTitle = path.relative(TARGET_DIR, dirPath);
 
     // Self-contained HTML string
