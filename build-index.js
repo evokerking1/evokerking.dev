@@ -6,13 +6,16 @@ const TARGET_DIR = process.argv[2] ? path.resolve(process.argv[2]) : path.resolv
 
 function generateIndex(dirPath) {
     const items = fs.readdirSync(dirPath, { withFileTypes: true });
+    const isRootDir = dirPath === TARGET_DIR;
     const hasExistingIndex = fs.existsSync(path.join(dirPath, 'index.html'));
+    const shouldGenerate = isRootDir || !hasExistingIndex;
 
-    if (hasExistingIndex) {
+    if (!shouldGenerate) {
         console.log(`Skipping ${dirPath} because it already has an index.html`);
-    } else {
-        console.log(`📂 Generating index for: ${dirPath}`);
+        return;
     }
+
+    console.log(`📂 Generating index for: ${dirPath}`);
 
     // Filter files: ignore index.html, hidden files, and the build script itself
     const files = items
@@ -73,8 +76,8 @@ function generateIndex(dirPath) {
 
     
 
-    if (!hasExistingIndex) {
-        // Write the index.html physically into the directory
+    if (shouldGenerate) {
+        // Write the index.html physically into the directory.
         fs.writeFileSync(path.join(dirPath, 'index.html'), htmlContent);
     }
 
