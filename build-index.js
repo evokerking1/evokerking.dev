@@ -5,11 +5,15 @@ const path = require('path');
 const TARGET_DIR = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve('.');
 
 function generateIndex(dirPath) {
-
-    console.log(`📂 Generating index for: ${dirPath}`);
-
     const items = fs.readdirSync(dirPath, { withFileTypes: true });
-    
+    const hasExistingIndex = fs.existsSync(path.join(dirPath, 'index.html'));
+
+    if (hasExistingIndex) {
+        console.log(`Skipping ${dirPath} because it already has an index.html`);
+    } else {
+        console.log(`📂 Generating index for: ${dirPath}`);
+    }
+
     // Filter files: ignore index.html, hidden files, and the build script itself
     const files = items
         .filter(item => {
@@ -67,8 +71,12 @@ function generateIndex(dirPath) {
 </body>
 </html>`;
 
-    // Write the index.html physically into the directory
-    fs.writeFileSync(path.join(dirPath, 'index.html'), htmlContent);
+    
+
+    if (!hasExistingIndex) {
+        // Write the index.html physically into the directory
+        fs.writeFileSync(path.join(dirPath, 'index.html'), htmlContent);
+    }
 
     // Recursively step into child directories
     items.forEach(item => {
