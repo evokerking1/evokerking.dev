@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Change 'public' to your folder name (e.g., '.', 'dist', 'docs')
-const TARGET_DIR = 'assets'; 
+const TARGET_DIR = process.argv.slice(2); 
 
 function generateIndex(dirPath) {
 
