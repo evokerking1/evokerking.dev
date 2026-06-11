@@ -7,7 +7,7 @@ const TARGET_DIR = process.argv[2] ? path.resolve(process.argv[2]) : path.resolv
 function generateIndex(dirPath) {
     const items = fs.readdirSync(dirPath, { withFileTypes: true });
     const isRootDir = dirPath === TARGET_DIR;
-    const hasExistingIndex = fs.existsSync(path.join(dirPath, 'index.html'));
+    const hasExistingIndex = fs.existsSync(path.join(dirPath, '.indexignore'));
     const shouldGenerate = isRootDir || !hasExistingIndex;
 
     if (!shouldGenerate) {
