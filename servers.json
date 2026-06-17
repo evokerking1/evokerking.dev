@@ -59,6 +59,7 @@
     {
       "name": "evokerking's sidestore anissette server",
       "address": "https://ani.evokerking.dev"
+    }
   ],
   "cache": "https://servers.sidestore.io/servers.json.hash"
 }
