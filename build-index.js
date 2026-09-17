@@ -26,7 +26,7 @@ function generateIndex(dirPath) {
         })
         .map(item => ({
             name: item.name + (item.isDirectory() ? '/' : ''),
-            url: encodeURIComponent(item.name) + (item.isDirectory() ? '/' : '')
+            url: `./${encodeURIComponent(item.name)}${item.isDirectory() ? '/' : ''}`
         }))
         // Sort directories to the top, then alphabetically
         .sort((a, b) => {
