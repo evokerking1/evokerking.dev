@@ -1,0 +1,7 @@
+{
+    "component" : {
+        "name"   : "Ruffle",
+        "source" : "github://ruffle-rs/ruffle",
+        "ver"    : "0.6.0"
+    }
+}
