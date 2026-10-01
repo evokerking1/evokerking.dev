@@ -1,0 +1,10 @@
+{
+    "Components" : {
+        "Ruffle" : {
+            "ref" : "./lib/ruffle/components.json"
+        },
+        "Ionicons" : {
+            "ref" : "./lib/ionicons/components.json"
+        }
+    }
+}
